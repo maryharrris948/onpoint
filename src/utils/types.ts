@@ -14,13 +14,14 @@ export interface Account {
     username: string;
     password: string;
   };
-   bank_details: {
+  bank_details: {
     bank_name?: string;
     branch?: string;
     isAccountNumber?: boolean;
     account_number?: string;
     routing_number?: string;
     swift_code?: string;
+    account_type2?: string;
     account_type: string;
     balance_usd: number;
     isChecking?: boolean;
