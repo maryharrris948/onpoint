@@ -2,32 +2,37 @@
 export interface Account {
   account_id: string;
   holder: {
-    firstName?: string;
+    fullName?: string;
     lastName?: string;
     mobileNumber?: string;
-    createdOn?: string;
+    profileImgUrl?: string;
     nickName?: string;
-    gender?: string;
     email?: string;
     jointNames?: string;
+    createdOn?: string;
+    updatedOn?: string;
     username: string;
     password: string;
   };
-  bank_details: {
+   bank_details: {
     bank_name?: string;
-    account_name?: boolean;
-    account_number?: boolean;
+    branch?: string;
+    isAccountNumber?: boolean;
+    account_number?: string;
     routing_number?: string;
-    account_number_text?: string;
     swift_code?: string;
-    account_type2?: string;
     account_type: string;
     balance_usd: number;
+    isChecking?: boolean;
+    isLedger?: boolean;
     saving_balance_usd?: number;
+    current_balance_usd?: number;
+    ledger_balance_usd?: number;
   };
   transaction_mgs_code: {
     transaction_text_msg?: string;
     transaction_code?: string;
+    headerText?: string;
     lastStepText?: string;
     wireDate: boolean;
   };

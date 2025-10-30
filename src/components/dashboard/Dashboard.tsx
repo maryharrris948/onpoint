@@ -63,7 +63,7 @@ export default function Dashboard() {
       <div className="flex flex-col">
         <div className="p-[16px] py-[15px] flex flex-col">
           <span>{formattedDate}</span>
-          <span className="font-medium text-lg">Welcome, {user.holder.firstName}</span>
+          <span className="font-medium text-lg">Welcome, {user.holder.fullName}</span>
         </div>
         <div className="px-[16px] mb-4">
           {user.bank_details.account_type2 == 'saving_account' ? (

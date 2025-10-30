@@ -14,6 +14,12 @@ export default function Login() {
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if(!username || !password) {
+      setError('Please enter your user id and password');
+      return;
+    } 
+
     const userAccount = mockAccounts.find(account => account.holder.username === username);
     if (!userAccount) {
       setError('User not found');
@@ -29,17 +35,17 @@ export default function Login() {
   };
 
   const date = new Date();
-  const hour = date.getHours();
 
   return (
-    <div className="">
+    <div className="auth-bg-img">
       <Header />
-      <div className="h-screen bg-[#0D5257] p-4">
+      <div className="h-screen p-4 pt-24">
         <div className="bg-[#efeff0] mx-auto rounded-xl overflow-hidden w-full pb-7 mt-4">
-          <div className="flex flex-col bg-[#ffffff] items-center justify-center pt-2">
+          <div className="flex flex-col bg-[#ffffff] items-center justify-center py-6">
             <Image src="https://i.imgur.com/pq0wX3g.png" width={230} height={28} className="w-[150px]" alt="logo" />
-            <div className="mt-3">{error && <p className="text-[20px] text-center mx-auto max-w-[200px] rounded-md flex items-center justify-center text-red-600">{error}</p>}</div>
+            {error && <p className="text-base my-3 text-center mx-auto max-w-[200px] rounded-md flex items-center justify-center text-red-600">{error}</p>}
           </div>
+
           <form onSubmit={handleLogin}>
             <div className="flex flex-col gap-3 p-5 py-8 rounded-lg">
               <div className="flex relative flex-col gap-3">
